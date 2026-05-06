@@ -1,35 +1,36 @@
-# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
-vendor_id = 0x4c4b
-product_id = 0x4643
-manufacturer = "RMK"
-chip = "rp2040"
+name = "rkey SosKey"
+product_name = "rkey SosKey"
+vendor_id = 0xfeed
+product_id = 0x0505
+manufacturer = "rkey-device"
+chip = "stm32f303cc"
 
 [matrix]
-# Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
-
-# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
-# row2col = true
+bootmagic = [0, 0]
+row_pins = ["PB11", "PB14", "PB1", "PB0", "PA9", "PA3"]
+col_pins = ["PB13", "PB12", "PB10", "PA10", "PA15", "PB3", "PB4", "PB5", "PB6", "PB7", "PB8", "PB9", "PA0", "PC15", "PA2", "PA1"]
+row2col = true
 
 [layout]
-rows = 4
-cols = 3
+rows = 6
+cols = 16
 layers = 2
 keymap = [
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
+        ["esc", "F1", "MO(1)", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F0", "F11", "MO(1)", "F12", "del"],
+        ["grv", "Kc1", "Kc2", "Kc3", "Kc4", "Kc5", "Kc6", "Kc7", "Kc8", "Kc9", "Kc0", "-", "=", "bspc", "Home"],
+        ["Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "lbrc", "rbrc", "bsls", "pgup"],
+        ["caps", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "ent", "pgdn"],
+        ["lsft", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "slsh", "rsft", "Up", "End"],
+        ["lctl", "lwin", "LAlt", "Space", "MO(1)", "RAlt", "rctl", "Left", "Down", "Right"]
     ],
     [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
     ],
 ]
